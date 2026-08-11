@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Base styles */
+html,
+body {
+    height: 100%;
+    background-color: #f9fafb;
+    /* gray-50 */
+    color: #111827;
+    /* gray-900 */
+    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Neon shadow utilities */
+@layer utilities {
+    .shadow-neon {
+        box-shadow: 0 0 10px #ff00ff,
+            0 0 20px #00ffff,
+            0 0 40px #ffff00;
+    }
+
+    .shadow-neon-blue {
+        box-shadow: 0 0 10px #00f,
+            0 0 20px #0ff,
+            0 0 40px #0ff;
+    }
+
+    .shadow-neon-pink {
+        box-shadow: 0 0 10px #f0f,
+            0 0 20px #f0f,
+            0 0 40px #ff0;
+    }
+}
+
+/* Gradient text effect */
+@layer utilities {
+    .gradient-text {
+        @apply bg-gradient-to-r from-cyan-400 via-pink-500 to-yellow-400 bg-clip-text text-transparent;
+    }
+}
+
+/* Neon button styles */
+@layer utilities {
+    .btn-neon {
+        @apply px-6 py-3 rounded-lg font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 shadow-lg transform transition;
+    }
+
+    .btn-neon:hover {
+        @apply scale-105;
+        box-shadow: 0 0 10px #ff00ff,
+            0 0 20px #00ffff,
+            0 0 40px #ffff00;
+    }
+}
